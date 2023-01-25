@@ -1,5 +1,7 @@
 from random import randint
 from random import shuffle
+from colorama import init, Fore
+init()
 
 action_list = ["stone", "paper", "scissor"]
 
@@ -19,11 +21,11 @@ def get_user_input():
 
 
 def show_result(computer_action, user_input, winning_msg):
-    print("_-_-_-_-_-_")
+    print(Fore.RESET + "_-_-_-_-_-_")
     print(f"Computer action, {computer_action}")
     print(f"User input, {user_input}")
-    print(winning_msg)
-    print("_-_-_-_-_-_\n")
+    print(Fore.GREEN + winning_msg)
+    print(Fore.RESET + "_-_-_-_-_-_\n")
 
 
 def game():
@@ -31,11 +33,13 @@ def game():
     user_input = get_user_input()
 
     while action == user_input:
-        print("!!!!!!!!!!!!!!")
+        print()
+        print(Fore.RED + "!!!!!!!!!!!!!!")
         print(f"Computer action, {action}")
         print(f"User input, {user_input}")
         print('Same action, please try again')
         print("!!!!!!!!!!!!!!\n")
+        print(Fore.RESET)
         return game()
 
     if user_input == "stone" and action == "scissor":
