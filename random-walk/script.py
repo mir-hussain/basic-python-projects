@@ -13,7 +13,7 @@ color_list = ["red", "green", "orange", "blue", "black", "purple", "gray"]
 
 for number in range(500):
     pen.color(choice(color_list))
-    pen.right(45 * randint(0, 10))
+    pen.right(90 * randint(0, 10))
     pen.forward(30)
 
 screen.exitonclick()
