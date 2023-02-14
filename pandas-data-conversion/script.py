@@ -11,5 +11,4 @@ data_dict = {
     "Count": [black_count, cinnamon_count, gray_count]
 }
 
-new_data = pandas.DataFrame(data_dict)
-print(new_data)
+new_data = pandas.DataFrame(data_dict).to_csv("new_data.csv")
